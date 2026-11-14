@@ -1,0 +1,74 @@
+[
+  {
+    "id": "daily_01",
+    "difficulty": "medium",
+    "title": "AITA for divorcing my husband after he put beans in the Texas chili?",
+    "snippet": "He claims it adds texture, but my family has lived in Austin for four generations and this is an unforgivable food crime...",
+    "solution": ["r/AmItheAsshole", "r/texas"],
+    "flairs": ["[Relationship Advice]", "[Texas Food Crime]"],
+    "hints": [
+      "Subreddit 1 is dedicated to moral judgment on interpersonal drama.",
+      "Subreddit 2 is a US state community famous for BBQ, Austin, and Lone Stars."
+    ]
+  },
+  {
+    "id": "easy_01",
+    "difficulty": "easy",
+    "title": "Check out this custom liquid-cooled PC build I made for my cat!",
+    "snippet": "RGB lights everywhere and the top radiator vents make the perfect warm sleeping spot. Specs in comments.",
+    "solution": ["r/pcmasterrace", "r/aww"],
+    "flairs": ["[Build Showcase]", "[Cute Animal]"],
+    "hints": [
+      "Subreddit 1 is a massive community for custom PC enthusiasts and hardware benchmarks.",
+      "Subreddit 2 is the premier hub for wholesome, cute animals and pets."
+    ]
+  },
+  {
+    "id": "medium_02",
+    "difficulty": "medium",
+    "title": "My neighbor's overgrown oak tree dropped shade onto my heirloom tomatoes. Can I sue for loss of yield?",
+    "snippet": "They refuse to trim the canopy. What are my legal options regarding tree law and sunlight rights in Ohio?",
+    "solution": ["r/legaladvice", "r/gardening"],
+    "flairs": ["[Tree Law]", "[Zone 6b Growth]"],
+    "hints": [
+      "Subreddit 1 offers legal guidance and is famous for its obsession with 'Tree Law'.",
+      "Subreddit 2 is dedicated to growing plants, fruits, vegetables, and soil health."
+    ]
+  },
+  {
+    "id": "hard_01",
+    "difficulty": "hard",
+    "title": "TIFU by accidentally presenting a detailed thesis on 18th-century Prussian turnip farming in my company board meeting",
+    "snippet": "I opened the wrong slide deck. The CEO sat through 45 minutes of crop rotation logistics before asking how this affects Q4 revenue...",
+    "solution": ["r/tifu", "r/AskHistorians"],
+    "flairs": ["[L-TIFU]", "[In-Depth Analysis]"],
+    "hints": [
+      "Subreddit 1 is for sharing embarrassing personal mishaps and daily blunders.",
+      "Subreddit 2 is renowned for strictly moderated, highly detailed history answers."
+    ]
+  },
+  {
+    "id": "medium_03",
+    "difficulty": "medium",
+    "title": "YOLO'd my entire emergency fund into ornamental gourd futures after reading a budget spreadsheet",
+    "snippet": "My 50-30-20 savings plan suggested diversification, so I bought 40 metric tons of gourds arriving before Thanksgiving...",
+    "solution": ["r/wallstreetbets", "r/personalfinance"],
+    "flairs": ["[Gain/Loss]", "[Budgeting Advice]"],
+    "hints": [
+      "Subreddit 1 is famous for high-risk stock options gambles and chaotic trading memes.",
+      "Subreddit 2 offers sensible advice on emergency funds, 401ks, and index funds."
+    ]
+  },
+  {
+    "id": "easy_02",
+    "difficulty": "easy",
+    "title": "Attempted to bake a sourdough loaf, but my yeast threw a stack overflow exception",
+    "snippet": "The starter expanded out of the jar and covered my entire keyboard in raw dough. Null pointer in the oven.",
+    "solution": ["r/Baking", "r/softwaregore"],
+    "flairs": ["[Sourdough Help]", "[Uncaught Exception]"],
+    "hints": [
+      "Subreddit 1 is dedicated to cakes, breads, pastries, and ovens.",
+      "Subreddit 2 features glitches, broken interfaces, and chaotic technology errors."
+    ]
+  }
+]
