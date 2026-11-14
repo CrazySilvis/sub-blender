@@ -26,10 +26,14 @@ export type Puzzle = {
   upvotes: number;
   commentCount: number;
   subreddits: [string, string];
+  acceptedAliases?: [string[], string[]];
   hints: [string, string];
   explanation: string;
   karmaReward: number;
   author?: string;
+  authorSnoovatarUrl?: string;
+  postId?: string;
+  postUrl?: string;
 };
 
 export type CosmeticCategory = 'theme' | 'flair' | 'animation';
@@ -43,11 +47,48 @@ export type CosmeticItem = {
   streakRequired?: number;
   badgeText?: string;
   previewAccent: string;
+  adminOnly?: boolean;
 };
 
 export type AttemptResult = {
   guesses: [string, string];
   statuses: ['exact' | 'miss', 'exact' | 'miss'];
+};
+
+export type DailyRecord = {
+  dateKey: string;
+  puzzleId: string;
+  status: 'playing' | 'won' | 'lost';
+  attempts: AttemptResult[];
+  rewardKarma: number;
+};
+
+export type SolvedPuzzleRecord = {
+  puzzleId: string;
+  status: 'won';
+  attempts: AttemptResult[];
+  rewardKarma: number;
+  solvedAt: string;
+};
+
+export type PuzzlePickStat = {
+  subreddit: string;
+  count: number;
+  totalSubmissions: number;
+  acceptedFor?: string;
+};
+
+export type PuzzleStatsSummary = {
+  totalSubmissions: number;
+  subCounts: Record<string, number>;
+};
+
+export type FlexCommentResponse = {
+  status: 'success' | 'error';
+  message: string;
+  commentId?: string;
+  commentUrl?: string;
+  simulated?: boolean;
 };
 
 export type EquippedCosmetics = {
@@ -56,17 +97,69 @@ export type EquippedCosmetics = {
   animationId: 'blender-spin' | 'upvote-burst' | 'kinetic-shake';
 };
 
+export const ADMIN_USERNAMES = ['crazysilvis'];
+
+export function isAdminUsername(username?: string | null): boolean {
+  if (!username) return false;
+  return ADMIN_USERNAMES.includes(username.trim().toLowerCase());
+}
+
+export const SUBREDDIT_SYNONYM_GROUPS: string[][] = [
+  ['r/cats', 'r/aww', 'r/pets', 'r/Eyebleach'],
+  ['r/dogs', 'r/aww', 'r/pets', 'r/Eyebleach'],
+  ['r/Baking', 'r/Cooking', 'r/food'],
+  ['r/pcmasterrace', 'r/buildapc', 'r/battlestations'],
+  ['r/gardening', 'r/plantclinic'],
+  ['r/texas', 'r/Austin', 'r/Dallas', 'r/Houston'],
+  ['r/ProgrammerHumor', 'r/softwaregore'],
+  ['r/DIY', 'r/woodworking', 'r/HomeImprovement'],
+  ['r/personalfinance', 'r/Frugal', 'r/wallstreetbets'],
+  ['r/AmItheAsshole', 'r/relationship_advice'],
+  ['r/NoStupidQuestions', 'r/explainlikeimfive', 'r/OutOfTheLoop'],
+  ['r/mildlyinteresting', 'r/Damnthatsinteresting', 'r/oddlysatisfying'],
+  ['r/tifu', 'r/MaliciousCompliance'],
+];
+
+export function buildAutoAliasesForPair(
+  subA: string,
+  subB: string
+): [string[], string[]] {
+  const getRelated = (target: string, exclude: string): string[] => {
+    const targetLower = target.toLowerCase();
+    const excludeLower = exclude.toLowerCase();
+    const set = new Set<string>();
+    for (const group of SUBREDDIT_SYNONYM_GROUPS) {
+      if (group.some((item) => item.toLowerCase() === targetLower)) {
+        for (const item of group) {
+          const itemLower = item.toLowerCase();
+          if (itemLower !== targetLower && itemLower !== excludeLower) {
+            set.add(item);
+          }
+        }
+      }
+    }
+    return Array.from(set);
+  };
+  return [getRelated(subA, subB), getRelated(subB, subA)];
+}
+
 export type InitResponse = {
   type: 'init';
   postId: string;
+  activePostPuzzleId?: string;
   count: number;
   username: string;
+  snoovatarUrl?: string;
+  isAdmin: boolean;
   karma: number;
   streakCurrent: number;
   streakBest: number;
   isDailyCompleted: boolean;
   dailyNumber: number;
+  dailyRecord?: DailyRecord | null;
   solvedPuzzleIds: string[];
+  solvedRecords?: Record<string, SolvedPuzzleRecord>;
+  puzzleStats?: Record<string, PuzzleStatsSummary>;
   unlockedCosmetics: string[];
   equipped: EquippedCosmetics;
 };
@@ -136,7 +229,7 @@ export const COSMETICS_CATALOG: CosmeticItem[] = [
     id: 'flair-alchemist',
     category: 'flair',
     name: 'Karma Alchemist',
-    description: 'Turns tangled mashups into pure comment-section gold.',
+    description: 'Turns blended mashups into pure comment-section gold.',
     costKarma: 300,
     badgeText: '300 Karma',
     previewAccent: '#f59e0b',
@@ -161,6 +254,17 @@ export const COSMETICS_CATALOG: CosmeticItem[] = [
     streakRequired: 7,
     badgeText: '750 Karma or 7-Day Streak',
     previewAccent: '#eab308',
+  },
+  {
+    id: 'flair-creator',
+    category: 'flair',
+    name: 'Blender Creator',
+    description:
+      'Exclusive founder title reserved for Subreddit Blender creator u/CrazySilvis.',
+    costKarma: 0,
+    badgeText: 'Creator Exclusive',
+    previewAccent: '#ff4500',
+    adminOnly: true,
   },
   {
     id: 'blender-spin',

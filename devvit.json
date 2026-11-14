@@ -49,6 +49,11 @@
     "subreddit": "sub_blender_dev"
   },
   "permissions": {
-    "reddit": true
+    "reddit": {
+      "asUser": [
+        "SUBMIT_POST",
+        "SUBMIT_COMMENT"
+      ]
+    }
   }
 }

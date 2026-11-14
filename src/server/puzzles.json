@@ -1,74 +1,550 @@
 [
   {
-    "id": "daily_01",
-    "difficulty": "medium",
-    "title": "AITA for divorcing my husband after he put beans in the Texas chili?",
-    "snippet": "He claims it adds texture, but my family has lived in Austin for four generations and this is an unforgivable food crime...",
-    "solution": ["r/AmItheAsshole", "r/texas"],
-    "flairs": ["[Relationship Advice]", "[Texas Food Crime]"],
+    "id": "daily-12",
+    "mode": "daily",
+    "dailyNumber": 12,
+    "title": "TIFU by accidentally deploying sourdough starter into our production Kubernetes cluster",
+    "body": "Obligatory this happened while preheating the Dutch oven at 475°F. I misread the hydration ratio in our Helm chart, and now every pod is rising 300% faster than expected while emitting a tangy yeast smell in the server closet. Should I push a hotfix or punch it down for a second proof?",
+    "blendedFlair": "Critical Proofing Incident",
+    "upvotes": 8420,
+    "commentCount": 612,
+    "subreddits": ["r/tifu", "r/Baking"],
+    "acceptedAliases": [
+      ["r/MaliciousCompliance", "r/ProgrammerHumor"],
+      ["r/Cooking", "r/food"]
+    ],
     "hints": [
-      "Subreddit 1 is dedicated to moral judgment on interpersonal drama.",
-      "Subreddit 2 is a US state community famous for BBQ, Austin, and Lone Stars."
-    ]
+      "Community 1 is famous for starting stories with 'Obligatory this happened...'",
+      "Community 2 obsesses over hydration percentages, proofing, and Dutch ovens."
+    ],
+    "explanation": "Blends r/tifu's confession framing ('Obligatory...') with r/Baking's sourdough hydration and proofing jargon.",
+    "karmaReward": 150
   },
   {
-    "id": "easy_01",
-    "difficulty": "easy",
-    "title": "Check out this custom liquid-cooled PC build I made for my cat!",
-    "snippet": "RGB lights everywhere and the top radiator vents make the perfect warm sleeping spot. Specs in comments.",
-    "solution": ["r/pcmasterrace", "r/aww"],
-    "flairs": ["[Build Showcase]", "[Cute Animal]"],
+    "id": "daily-13",
+    "mode": "daily",
+    "dailyNumber": 13,
+    "title": "AITA for refusing to fix my neighbor's rig after their 4090 caught fire during a cable check?",
+    "body": "My neighbor (34M) asked me to look at his custom loop, then blew up when I told him his daisy-chained PSU cables and zero airflow were a crime. Now his whole HOA group chat says I'm gatekeeping frames per second. I reminded him thermal throttling isn't my jurisdiction and walked away.",
+    "blendedFlair": "Not The Bottleneck",
+    "upvotes": 14200,
+    "commentCount": 1940,
+    "subreddits": ["r/AmItheAsshole", "r/pcmasterrace"],
+    "acceptedAliases": [
+      ["r/relationship_advice"],
+      ["r/buildapc", "r/battlestations"]
+    ],
     "hints": [
-      "Subreddit 1 is a massive community for custom PC enthusiasts and hardware benchmarks.",
-      "Subreddit 2 is the premier hub for wholesome, cute animals and pets."
-    ]
+      "Community 1 judges interpersonal conflicts using acronyms like NTA and YTA.",
+      "Community 2 celebrates high frame rates, custom GPU rigs, and clean cable management."
+    ],
+    "explanation": "Fuses r/AmItheAsshole's moral judgment format ('AITA', age/gender tags) with r/pcmasterrace's GPU and airflow obsession.",
+    "karmaReward": 150
   },
   {
-    "id": "medium_02",
-    "difficulty": "medium",
-    "title": "My neighbor's overgrown oak tree dropped shade onto my heirloom tomatoes. Can I sue for loss of yield?",
-    "snippet": "They refuse to trim the canopy. What are my legal options regarding tree law and sunlight rights in Ohio?",
-    "solution": ["r/legaladvice", "r/gardening"],
-    "flairs": ["[Tree Law]", "[Zone 6b Growth]"],
+    "id": "daily-14",
+    "mode": "daily",
+    "dailyNumber": 14,
+    "title": "My cat got served an eviction notice from the couch—do we have squatter's rights over the sunny patch?",
+    "body": "Located in Ohio. My tabby (3M, orange, single braincell) has occupied the exact square of carpet by the radiator for 19 consecutive months without paying rent. Landlord says the dog technically holds the lease. Should I retain paw-counsel before small claims court?",
+    "blendedFlair": "Feline Jurisprudence",
+    "upvotes": 9750,
+    "commentCount": 845,
+    "subreddits": ["r/cats", "r/legaladvice"],
+    "acceptedAliases": [
+      ["r/aww", "r/pets", "r/Eyebleach"],
+      ["r/NoStupidQuestions"]
+    ],
     "hints": [
-      "Subreddit 1 offers legal guidance and is famous for its obsession with 'Tree Law'.",
-      "Subreddit 2 is dedicated to growing plants, fruits, vegetables, and soil health."
-    ]
+      "Community 1 shares photos and antics of orange tabbies sharing one braincell.",
+      "Community 2 always asks 'Location?' and warns about tenant laws and small claims."
+    ],
+    "explanation": "Combines r/cats' 'single orange braincell' lore with r/legaladvice's mandatory location tags and tenant-law phrasing.",
+    "karmaReward": 150
   },
   {
-    "id": "hard_01",
-    "difficulty": "hard",
-    "title": "TIFU by accidentally presenting a detailed thesis on 18th-century Prussian turnip farming in my company board meeting",
-    "snippet": "I opened the wrong slide deck. The CEO sat through 45 minutes of crop rotation logistics before asking how this affects Q4 revenue...",
-    "solution": ["r/tifu", "r/AskHistorians"],
-    "flairs": ["[L-TIFU]", "[In-Depth Analysis]"],
+    "id": "daily-15",
+    "mode": "daily",
+    "dailyNumber": 15,
+    "title": "ELI5: Why does my paycheck vanish faster than light escaping a Schwarzschild radius?",
+    "body": "I'm five years old and just opened a high-yield savings account, but every time I approach payday the gravitational pull of rent and groceries bends spacetime so badly that nothing crosses my emergency fund horizon. Is Hawking radiation just credit card cashback?",
+    "blendedFlair": "Astrophysics & Budgets",
+    "upvotes": 6310,
+    "commentCount": 428,
+    "subreddits": ["r/explainlikeimfive", "r/space"],
+    "acceptedAliases": [
+      ["r/NoStupidQuestions", "r/personalfinance"],
+      ["r/science"]
+    ],
     "hints": [
-      "Subreddit 1 is for sharing embarrassing personal mishaps and daily blunders.",
-      "Subreddit 2 is renowned for strictly moderated, highly detailed history answers."
-    ]
+      "Community 1 simplifies complex topics as if explaining them to a child.",
+      "Community 2 explores black holes, event horizons, and orbital mechanics."
+    ],
+    "explanation": "Blends r/explainlikeimfive's simplified 'ELI5' framing with r/space's black hole physics.",
+    "karmaReward": 150
   },
   {
-    "id": "medium_03",
-    "difficulty": "medium",
-    "title": "YOLO'd my entire emergency fund into ornamental gourd futures after reading a budget spreadsheet",
-    "snippet": "My 50-30-20 savings plan suggested diversification, so I bought 40 metric tons of gourds arriving before Thanksgiving...",
-    "solution": ["r/wallstreetbets", "r/personalfinance"],
-    "flairs": ["[Gain/Loss]", "[Budgeting Advice]"],
+    "id": "easy-1",
+    "mode": "easy",
+    "title": "If my emergency fund is just three jars of pennies, am I technically an angel investor in copper?",
+    "body": "Think about it: every time you skip iced coffee, you're just shorting your own caffeine futures to long-term vest in a 529 plan inside a mason jar under the sink.",
+    "blendedFlair": "Shower Portfolio",
+    "upvotes": 5120,
+    "commentCount": 310,
+    "subreddits": ["r/showerthoughts", "r/personalfinance"],
+    "acceptedAliases": [
+      [],
+      ["r/Frugal", "r/wallstreetbets"]
+    ],
     "hints": [
-      "Subreddit 1 is famous for high-risk stock options gambles and chaotic trading memes.",
-      "Subreddit 2 offers sensible advice on emergency funds, 401ks, and index funds."
-    ]
+      "Community 1 posts miniature epiphanies that hit you under hot water.",
+      "Community 2 preaches emergency funds, 529 plans, and skipping small luxuries."
+    ],
+    "explanation": "Mixes r/showerthoughts' 'Think about it...' epigram style with r/personalfinance's emergency fund terminology.",
+    "karmaReward": 100
   },
   {
-    "id": "easy_02",
-    "difficulty": "easy",
-    "title": "Attempted to bake a sourdough loaf, but my yeast threw a stack overflow exception",
-    "snippet": "The starter expanded out of the jar and covered my entire keyboard in raw dough. Null pointer in the oven.",
-    "solution": ["r/Baking", "r/softwaregore"],
-    "flairs": ["[Sourdough Help]", "[Uncaught Exception]"],
+    "id": "easy-2",
+    "mode": "easy",
+    "title": "I forgot to save my cast-iron skillet seasoning and now the boss fight reset to Phase 1",
+    "body": "Spent 45 minutes building a mirror-black patina on medium-low heat, then deglazed with tomato sauce by mistake. Stripped the whole pan back to bare iron. Should I grind more flaxseed oil or summon a line cook?",
+    "blendedFlair": "Culinary Respawn",
+    "upvotes": 4890,
+    "commentCount": 276,
+    "subreddits": ["r/Cooking", "r/gaming"],
+    "acceptedAliases": [
+      ["r/food", "r/Baking"],
+      ["r/EldenRing"]
+    ],
     "hints": [
-      "Subreddit 1 is dedicated to cakes, breads, pastries, and ovens.",
-      "Subreddit 2 features glitches, broken interfaces, and chaotic technology errors."
-    ]
+      "Community 1 debates cast-iron seasoning, deglazing, and medium-low heat.",
+      "Community 2 talks about boss phases, resets, and summoning co-op help."
+    ],
+    "explanation": "Blends r/Cooking's cast-iron skillet care with r/gaming's boss-fight progression tropes.",
+    "karmaReward": 100
+  },
+  {
+    "id": "easy-3",
+    "mode": "easy",
+    "title": "Just rescued this golden retriever—look at his tiny paws AND his 100% lossless RGB collar!",
+    "body": "Who's a good boy? He sits on command, gives gentle boops, and features a 240Hz wag rate paired with custom braided paracord leash management on a walnut desk.",
+    "blendedFlair": "Certified Good Setup",
+    "upvotes": 7320,
+    "commentCount": 398,
+    "subreddits": ["r/dogs", "r/battlestations"],
+    "acceptedAliases": [
+      ["r/aww", "r/pets", "r/Eyebleach"],
+      ["r/pcmasterrace", "r/buildapc"]
+    ],
+    "hints": [
+      "Community 1 celebrates rescues, snoot boops, and good boys.",
+      "Community 2 showcases clean desk setups, RGB lighting, and braided cables."
+    ],
+    "explanation": "Pairs r/dogs' wholesome rescue energy with r/battlestations' hardware-spec flexes.",
+    "karmaReward": 100
+  },
+  {
+    "id": "easy-4",
+    "mode": "easy",
+    "title": "My monstera has crispy brown tips—is it root rot or should I dump 100% of my savings into mulch calls?",
+    "body": "Diamond hands on this variegated cutting since April. I watered only when the top two inches were dry, yet the leaves are down 40% YTD. Apes together in terracotta pots, do I hold or repot?",
+    "blendedFlair": "Botanical YOLO",
+    "upvotes": 5640,
+    "commentCount": 512,
+    "subreddits": ["r/plantclinic", "r/wallstreetbets"],
+    "acceptedAliases": [
+      ["r/gardening"],
+      ["r/personalfinance"]
+    ],
+    "hints": [
+      "Community 1 diagnoses yellowing leaves, root rot, and watering schedules.",
+      "Community 2 uses 'diamond hands', 'calls', 'YTD', and 'apes together'."
+    ],
+    "explanation": "Merges r/plantclinic's houseplant triage with r/wallstreetbets' chaotic options-trading slang.",
+    "karmaReward": 100
+  },
+  {
+    "id": "easy-5",
+    "mode": "easy",
+    "title": "Built a walnut floating bookshelf from scratch, only for my compiler to throw a NullPointerException on Shelf 3",
+    "body": "Pocket-holed the French cleat into studs with 3-inch lag bolts, sanded to 220 grit, applied tung oil—and the moment I placed a hardcover on it, Java crashed and rendered the planks upside down.",
+    "blendedFlair": "Structural Segfault",
+    "upvotes": 4190,
+    "commentCount": 219,
+    "subreddits": ["r/woodworking", "r/softwaregore"],
+    "acceptedAliases": [
+      ["r/DIY", "r/HomeImprovement"],
+      ["r/ProgrammerHumor"]
+    ],
+    "hints": [
+      "Community 1 loves French cleats, 220-grit sanding, and tung oil finishes.",
+      "Community 2 posts hilarious UI glitches, crashes, and runtime exceptions."
+    ],
+    "explanation": "Combines r/woodworking's joinery craft with r/softwaregore's glitchy runtime failures.",
+    "karmaReward": 100
+  },
+  {
+    "id": "medium-1",
+    "mode": "medium",
+    "title": "Did Roman legionaries actually carry extra Estus Flasks during the Punic Wars, or is that a mid-game patch myth?",
+    "body": "Edit: Thank you for your patience while top-level replies are verified by peer-reviewed sources. I've read Livy's account of crossing the Alps, yet none of the primary tablets clarify whether Hannibal buffed poise before Cannae.",
+    "blendedFlair": "Peer-Reviewed Lore",
+    "upvotes": 6810,
+    "commentCount": 148,
+    "subreddits": ["r/AskHistorians", "r/EldenRing"],
+    "acceptedAliases": [
+      ["r/todayilearned"],
+      ["r/gaming"]
+    ],
+    "hints": [
+      "Community 1 enforces strict academic citations and removes speculative top-level comments.",
+      "Community 2 debates poise, flasks, and FromSoftware boss patches."
+    ],
+    "explanation": "Marries r/AskHistorians' strict scholarly moderation with r/EldenRing's Soulsborne mechanics.",
+    "karmaReward": 150
+  },
+  {
+    "id": "medium-2",
+    "mode": "medium",
+    "title": "My partner won't stop placing Creeper banners above our bed—major red flags or normal interior design?",
+    "body": "Together 4 years (28F / 29M). Every time I ask him to craft something subtle with oak planks and lanterns, he mines straight down into my boundaries and spawns obsidian walls around our finances. Should I pack my inventory and leave?",
+    "blendedFlair": "Block-Level Boundaries",
+    "upvotes": 8290,
+    "commentCount": 1120,
+    "subreddits": ["r/relationship_advice", "r/Minecraft"],
+    "acceptedAliases": [
+      ["r/AmItheAsshole"],
+      ["r/gaming"]
+    ],
+    "hints": [
+      "Community 1 spots 'red flags' and gives breakup advice using age/relationship length tags.",
+      "Community 2 revolves around Creepers, obsidian, oak planks, and mining straight down."
+    ],
+    "explanation": "Combines r/relationship_advice's classic relationship crisis syntax with r/Minecraft survival rules.",
+    "karmaReward": 150
+  },
+  {
+    "id": "medium-3",
+    "mode": "medium",
+    "title": "[OC] I plotted 1,000 days of my cat knocking pens off the desk using a radial Sankey diagram",
+    "body": "Data collected via motion sensor between 3:00 AM and 4:15 AM. Notice how 68% of blue ballpoints flow directly under the fridge while 12% remain unrecovered behind the bookshelf. Tools: Python, Matplotlib, and sheer sleep deprivation.",
+    "blendedFlair": "Feline Telemetry [OC]",
+    "upvotes": 9430,
+    "commentCount": 389,
+    "subreddits": ["r/dataisbeautiful", "r/cats"],
+    "acceptedAliases": [
+      [],
+      ["r/aww", "r/pets", "r/Eyebleach"]
+    ],
+    "hints": [
+      "Community 1 tags charts with [OC], lists visualization tools, and loves Sankey diagrams.",
+      "Community 2 documents 3 AM zoomies and gravity experiments by household felines."
+    ],
+    "explanation": "Pairs r/dataisbeautiful's '[OC]' and Matplotlib tool credits with r/cats' classic 3 AM chaos.",
+    "karmaReward": 150
+  },
+  {
+    "id": "medium-4",
+    "mode": "medium",
+    "title": "TIL that before 1978, you could swap your thermal paste with peanut butter to lower CPU temps by 4°C",
+    "body": "Wait—never mind, I read the benchmark upside down. Actually, my motherboard socket now smells like a roasted PB&J and POSTs a single long beep. At least the BIOS splash screen looks crispy.",
+    "blendedFlair": "Accidental Fact Check",
+    "upvotes": 5110,
+    "commentCount": 402,
+    "subreddits": ["r/todayilearned", "r/buildapc"],
+    "acceptedAliases": [
+      [],
+      ["r/pcmasterrace", "r/tech", "r/gadgets"]
+    ],
+    "hints": [
+      "Community 1 always starts posts with 'TIL' to share surprising historical or scientific trivia.",
+      "Community 2 helps troubleshoot CPU coolers, thermal paste, and BIOS POST beeps."
+    ],
+    "explanation": "Fuses r/todayilearned's 'TIL' hook with r/buildapc's hardware assembly troubleshooting.",
+    "karmaReward": 150
+  },
+  {
+    "id": "medium-5",
+    "mode": "medium",
+    "title": "My neighbor demanded I cut my rosemary hedge to 3 inches, so I pruned it to 2.999 inches and left every sprig on his porch",
+    "body": "He cited city code Section 4B saying herbs cannot overhang the sidewalk by a millimeter. Fine. I harvested 14 pounds of fresh rosemary, dehydrated it neatly, and stacked labeled jars on his welcome mat with a receipt of compliance.",
+    "blendedFlair": "Petty Harvest",
+    "upvotes": 11250,
+    "commentCount": 730,
+    "subreddits": ["r/MaliciousCompliance", "r/gardening"],
+    "acceptedAliases": [
+      ["r/tifu"],
+      ["r/plantclinic"]
+    ],
+    "hints": [
+      "Community 1 celebrates obeying pedantic rules to the exact letter for petty justice.",
+      "Community 2 focuses on pruning hedges, harvesting herbs, and backyard beds."
+    ],
+    "explanation": "Blends r/MaliciousCompliance's literal rule-following revenge with r/gardening's herb pruning.",
+    "karmaReward": 150
+  },
+  {
+    "id": "hard-1",
+    "mode": "hard",
+    "title": "Austin city council votes to replace all I-35 merge lanes with giant brisket smokers after heat index hits 108°F",
+    "body": "No, this isn't satire—officials confirmed commuters stuck near Guadalupe Street will at least smell post-oak bark while idling for 45 minutes. H-E-B reportedly offered to sponsor the frontage road grates.",
+    "blendedFlair": "Not Satire · Lone Star",
+    "upvotes": 7680,
+    "commentCount": 591,
+    "subreddits": ["r/nottheonion", "r/Austin"],
+    "acceptedAliases": [
+      ["r/worldnews"],
+      ["r/texas"]
+    ],
+    "hints": [
+      "Community 1 collects real news headlines so absurd they sound like parody.",
+      "Community 2 complains daily about I-35 traffic, summer heat, and H-E-B runs."
+    ],
+    "explanation": "Blends r/nottheonion's 'too absurd to be real' headline style with r/Austin's iconic I-35 and H-E-B references.",
+    "karmaReward": 225
+  },
+  {
+    "id": "hard-2",
+    "mode": "hard",
+    "title": "After 6 months of buying 40g tactile switches and lube stations, I finally realized I just miss playing en passant",
+    "body": "Got tired of building 65% gasket-mounted aluminum boards with GMK keycaps—turns out I only type `Nf3`, `e4`, and `O-O-O` anyway. Does anyone make a 2-key macro pad for resigning cleanly?",
+    "blendedFlair": "Gasket-Mounted Gambit",
+    "upvotes": 3890,
+    "commentCount": 195,
+    "subreddits": ["r/MechanicalKeyboards", "r/chess"],
+    "acceptedAliases": [
+      ["r/battlestations"],
+      ["r/boardgames"]
+    ],
+    "hints": [
+      "Community 1 obsesses over gasket mounts, GMK keycaps, and custom switch lubing.",
+      "Community 2 memes endlessly about 'en passant' and algebraic move notation."
+    ],
+    "explanation": "Unites r/MechanicalKeyboards' custom keyboard jargon with r/chess's algebraic notation and en passant memes.",
+    "karmaReward": 225
+  },
+  {
+    "id": "hard-3",
+    "mode": "hard",
+    "title": "My dial-in espresso shot pulled in 27 seconds with tiger striping, and the rain tapping my loft window makes it unreal",
+    "body": "18g in, 36g out on a bottomless portafilter. Warm Edison string lights, vintage wool rug, cedar beams overhead, and zero overhead fluorescent glare while steam curls off the crema.",
+    "blendedFlair": "Warm Extraction Sanctuary",
+    "upvotes": 6420,
+    "commentCount": 244,
+    "subreddits": ["r/Coffee", "r/CozyPlaces"],
+    "acceptedAliases": [
+      ["r/food"],
+      []
+    ],
+    "hints": [
+      "Community 1 obsesses over 18g-in/36g-out ratios, tiger striping, and bottomless portafilters.",
+      "Community 2 showcases string-lit lofts, wool rugs, and rainy window aesthetics."
+    ],
+    "explanation": "Combines r/Coffee's precision espresso dialing with r/CozyPlaces' warm, rainy interior atmosphere.",
+    "karmaReward": 225
+  },
+  {
+    "id": "hard-4",
+    "mode": "hard",
+    "title": "The 2019 Great Yarn Dye Scandal—or how three Discord mods caused an entire crochet convention to implode",
+    "body": "Grab your popcorn. First, a boutique merino dyer missed 400 pre-orders; by page 12 of the Google Doc, the organizers had faked a shipping manifest, locked the wiki, and started a rival festival in a Dairy Queen parking lot.",
+    "blendedFlair": "Longform Drama · Craft",
+    "upvotes": 9140,
+    "commentCount": 872,
+    "subreddits": ["r/HobbyDrama", "r/DIY"],
+    "acceptedAliases": [
+      ["r/OutOfTheLoop"],
+      ["r/Art"]
+    ],
+    "hints": [
+      "Community 1 writes longform investigative recaps of niche community meltdowns.",
+      "Community 2 focuses on handmade crafts, projects, and step-by-step builds."
+    ],
+    "explanation": "Fuses r/HobbyDrama's 'Grab your popcorn' chronicling of niche meltdowns with r/DIY craft culture.",
+    "karmaReward": 225
+  },
+  {
+    "id": "hard-5",
+    "mode": "hard",
+    "title": "Bought this 1974 cast-iron waffle press at an estate sale—still works like day one AND fits in a 35L carry-on",
+    "body": "Zero plastic gears, solid brass hinges, weighs 9 pounds, and will outlive my grandchildren. Only downside is TSA always flags it at Heathrow before my overnight train to Kyoto.",
+    "blendedFlair": "Heirloom Carry-On",
+    "upvotes": 4560,
+    "commentCount": 318,
+    "subreddits": ["r/BuyItForLife", "r/travel"],
+    "acceptedAliases": [
+      ["r/Frugal"],
+      []
+    ],
+    "hints": [
+      "Community 1 hunts down indestructible vintage gear with zero plastic parts.",
+      "Community 2 debates 35L carry-on packing lists, TSA lines, and rail passes."
+    ],
+    "explanation": "Mixes r/BuyItForLife's heirloom durability obsession with r/travel's one-bag carry-on minimalism.",
+    "karmaReward": 225
+  },
+  {
+    "id": "insane-1",
+    "mode": "insane",
+    "title": "Wait—why is everyone suddenly arguing about whether a 4-hour director's cut counts as cardio?",
+    "body": "Out of the loop here: I stepped away from Reddit for two days and now half my feed is debating if walking on a treadmill during Zack Snyder's extended scenes hits Zone 2 heart rate. Can someone catch me up without spoilers?",
+    "blendedFlair": "Context Check · Cinephile",
+    "upvotes": 3740,
+    "commentCount": 412,
+    "subreddits": ["r/OutOfTheLoop", "r/fitness"],
+    "acceptedAliases": [
+      ["r/NoStupidQuestions", "r/movies"],
+      ["r/sports"]
+    ],
+    "hints": [
+      "Community 1 exists specifically for users asking why a meme or trend suddenly exploded.",
+      "Community 2 tracks Zone 2 cardio, heart rate, and progressive overload."
+    ],
+    "explanation": "Blends r/OutOfTheLoop's 'I stepped away for two days...' format with r/fitness's Zone 2 cardio talk.",
+    "karmaReward": 300
+  },
+  {
+    "id": "insane-2",
+    "mode": "insane",
+    "title": "My neighbor's rice cooker still plays a cheerful chiptune chime in 2026 while my smart fridge demands a firmware subscription",
+    "body": "Seriously, the 1998 fuzzy-logic heating coil works silently every morning, whereas my new Wi-Fi appliance bricked itself trying to sync Bluetooth to an app that got sunsetted last Tuesday.",
+    "blendedFlair": "Analog vs. IoT",
+    "upvotes": 10320,
+    "commentCount": 950,
+    "subreddits": ["r/technology", "r/Frugal"],
+    "acceptedAliases": [
+      ["r/gadgets"],
+      ["r/BuyItForLife", "r/personalfinance"]
+    ],
+    "hints": [
+      "Community 1 critiques smart-device subscriptions, DRM, and sunsetted IoT apps.",
+      "Community 2 celebrates keeping trusty 20-year-old appliances running cheaply."
+    ],
+    "explanation": "Merges r/technology's frustration with IoT bloat and r/Frugal's love for reliable, subscription-free appliances.",
+    "karmaReward": 300
+  },
+  {
+    "id": "insane-3",
+    "mode": "insane",
+    "title": "Unpopular opinion: Catan's longest road card ruins friendships faster than a poorly lit portrait at f/1.4",
+    "body": "Look, everyone loves shallow depth of field and bokeh balls, just like everyone loves hoarding brick and sheep—until you realize both leave zero room for sharp background context or fair trade deals.",
+    "blendedFlair": "Hot Take · Tabletop",
+    "upvotes": 2980,
+    "commentCount": 605,
+    "subreddits": ["r/unpopularopinion", "r/boardgames"],
+    "acceptedAliases": [
+      [],
+      ["r/photography"]
+    ],
+    "hints": [
+      "Community 1 leads posts with controversial takes meant to spark debate.",
+      "Community 2 argues endlessly about Catan, resource hoarding, and tabletop strategy."
+    ],
+    "explanation": "Pairs r/unpopularopinion's hot-take framing with r/boardgames' Settlers of Catan rivalry.",
+    "karmaReward": 300
+  },
+  {
+    "id": "insane-4",
+    "mode": "insane",
+    "title": "Watched this hummingbird hover perfectly still in 40mph gusts while reading 52 books in a single hammock season",
+    "body": "Iridescent throat feathers locked in place like a gyroscopic drone as I finished chapter 14 of Dune. Nature's aerodynamics are wild—and honestly better paced than the middle third of Messiah.",
+    "blendedFlair": "Avian & Literary",
+    "upvotes": 5410,
+    "commentCount": 203,
+    "subreddits": ["r/NatureIsFuckingLit", "r/books"],
+    "acceptedAliases": [
+      ["r/Damnthatsinteresting"],
+      []
+    ],
+    "hints": [
+      "Community 1 marvels at wild animal physics, iridescence, and nature photography.",
+      "Community 2 sets annual reading challenges and critiques classic sci-fi pacing."
+    ],
+    "explanation": "Blends r/NatureIsFuckingLit's awe at animal biology with r/books' reading-challenge culture.",
+    "karmaReward": 300
+  },
+  {
+    "id": "comm-1",
+    "mode": "community",
+    "title": "Every morning my senior pug stares at the toaster until it pops—same exact energy as waiting for CI/CD tests to pass",
+    "body": "One green checkmark equals one crumb of buttered sourdough. If the build fails on a flaky linter check, we both lie down on the rug and sigh deeply.",
+    "blendedFlair": "Community Blend",
+    "upvotes": 1420,
+    "commentCount": 94,
+    "subreddits": ["r/ProgrammerHumor", "r/Eyebleach"],
+    "acceptedAliases": [
+      ["r/softwaregore"],
+      ["r/dogs", "r/aww", "r/pets"]
+    ],
+    "hints": [
+      "Community 1 jokes about flaky CI/CD pipelines, linters, and production builds.",
+      "Community 2 delivers pure, adorable animal serotonin."
+    ],
+    "explanation": "Created by u/CrazySilvis—comparing flaky CI/CD checks to a hopeful pug watching a toaster.",
+    "karmaReward": 125,
+    "author": "u/CrazySilvis"
+  },
+  {
+    "id": "comm-2",
+    "mode": "community",
+    "title": "Pro tip: Put a dry wooden spoon across a boiling pasta pot, then use the same physics to organize your home server rack",
+    "body": "Surface tension breaks the starch foam instantly—just like velcro cable ties break thermal hotspots inside a 4U chassis. Works every time on a budget.",
+    "blendedFlair": "Community Blend",
+    "upvotes": 870,
+    "commentCount": 62,
+    "subreddits": ["r/lifehacks", "r/HomeImprovement"],
+    "acceptedAliases": [
+      ["r/Cooking"],
+      ["r/DIY", "r/battlestations"]
+    ],
+    "hints": [
+      "Community 1 shares clever everyday shortcuts like the wooden spoon over boiling water.",
+      "Community 2 covers wiring, mounting, and upgrading home utility spaces."
+    ],
+    "explanation": "Blends r/lifehacks' viral kitchen tricks with r/HomeImprovement's clean utility organization.",
+    "karmaReward": 125,
+    "author": "u/CableWizard"
+  },
+  {
+    "id": "comm-3",
+    "mode": "community",
+    "title": "Found a pristine 1995 Texas highway map tucked inside a thrift-store film camera bag—look at that alignment!",
+    "body": "Not only do the fold creases line up seamlessly without a single tear, the previous owner drew little stars next to every kolache stop between Houston and Dallas.",
+    "blendedFlair": "Community Blend",
+    "upvotes": 1190,
+    "commentCount": 81,
+    "subreddits": ["r/mildlyinteresting", "r/texas"],
+    "acceptedAliases": [
+      ["r/oddlysatisfying"],
+      ["r/Austin", "r/Dallas", "r/Houston"]
+    ],
+    "hints": [
+      "Community 1 delights in oddly neat everyday discoveries and thrift-store finds.",
+      "Community 2 passionately debates kolache stops and road trips between Houston and Dallas."
+    ],
+    "explanation": "Combines r/mildlyinteresting's thrift-store serendipity with r/texas's highway kolache pride.",
+    "karmaReward": 125,
+    "author": "u/KolacheScout"
+  },
+  {
+    "id": "comm-4",
+    "mode": "community",
+    "title": "What small, useless superpower would immediately get you banned from every local trivia night in Houston?",
+    "body": "Mine would be knowing the exact humidity inside Astrodome in 1986 and reciting every menu item ever discontinued by Whataburger, completely unprompted.",
+    "blendedFlair": "Community Blend",
+    "upvotes": 965,
+    "commentCount": 134,
+    "subreddits": ["r/AskReddit", "r/Houston"],
+    "acceptedAliases": [
+      ["r/NoStupidQuestions"],
+      ["r/texas"]
+    ],
+    "hints": [
+      "Community 1 asks open-ended hypotheticals like 'What useless superpower would you pick?'",
+      "Community 2 rallies around Whataburger lore, Astrodome nostalgia, and Gulf Coast humidity."
+    ],
+    "explanation": "Fuses r/AskReddit's classic hypothetical question prompt with r/Houston's hyper-local culture.",
+    "karmaReward": 125,
+    "author": "u/BayouBlender"
   }
 ]
