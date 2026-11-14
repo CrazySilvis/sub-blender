@@ -1,10 +1,9 @@
 import './index.css';
 
-import React, { useState } from 'react';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, BookOpen, Flame, Trophy } from 'lucide-react';
+import type { InitResponse } from '../shared/api';
 
-// Configured launch date for automatic Daily # calculation
 const LAUNCH_DATE = new Date('2026-11-01T00:00:00Z');
 
 const getDailyNumber = (): number => {
@@ -14,171 +13,216 @@ const getDailyNumber = (): number => {
   return diffDays > 0 ? diffDays : 1;
 };
 
-export const Splash: React.FC = () => {
+type SplashProps = {
+  onNavigateGame?: (mode: 'daily' | 'select') => void;
+};
+
+export const Splash: React.FC<SplashProps> = ({ onNavigateGame }) => {
   const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const dailyNumber = getDailyNumber();
+  const [dailyNumber, setDailyNumber] = useState(getDailyNumber());
+  const [isDailyCompleted, setIsDailyCompleted] = useState(false);
+  const [streakCurrent, setStreakCurrent] = useState(0);
+  const [karma, setKarma] = useState(500);
+
+  useEffect(() => {
+    fetch('/api/init')
+      .then((res) => res.json())
+      .then((data: InitResponse) => {
+        if (typeof data.dailyNumber === 'number') setDailyNumber(data.dailyNumber);
+        setIsDailyCompleted(Boolean(data.isDailyCompleted));
+        if (typeof data.streakCurrent === 'number') setStreakCurrent(data.streakCurrent);
+        if (typeof data.karma === 'number') setKarma(data.karma);
+      })
+      .catch(() => {});
+  }, []);
 
   const handleStartGame = async () => {
     setIsLoading(true);
     try {
       const res = await fetch('/api/init');
-      const data = await res.json();
+      const data: InitResponse = await res.json();
+      const targetMode = data && data.isDailyCompleted ? 'select' : 'daily';
 
-      if (data && data.isDailyCompleted) {
-        // User already completed today's daily -> Open Mode & Difficulty Selection
-        window.location.href = 'game.html?mode=select';
+      if (onNavigateGame) {
+        onNavigateGame(targetMode);
       } else {
-        // User hasn't done today's daily -> Jump directly into Today's Daily Challenge!
-        window.location.href = 'game.html?mode=daily';
+        window.location.href = `game.html?mode=${targetMode}`;
       }
     } catch (err) {
       console.error('Error checking daily status:', err);
-      // Fallback
-      window.location.href = 'game.html';
+      if (onNavigateGame) {
+        onNavigateGame('daily');
+      } else {
+        window.location.href = 'game.html';
+      }
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0b141f] text-white p-4 sm:p-6 font-sans flex flex-col justify-between max-w-xl mx-auto box-border">
-      {/* Top Header / Branding */}
-      <div className="flex justify-between items-center w-full pt-2">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl animate-spin-slow">🌀</span>
-          <span className="font-extrabold text-base tracking-wide text-orange-500">
+    <div className="min-h-screen w-full bg-[#0b141f] text-slate-100 px-4 py-6 sm:px-6 flex flex-col justify-between max-w-2xl mx-auto">
+      {/* Top Header */}
+      <header className="flex items-center justify-between gap-4 py-2 border-b border-slate-800/80">
+        <div className="flex items-center gap-2.5 whitespace-nowrap shrink-0">
+          <span className="text-2xl animate-spin-slow select-none" aria-hidden="true">
+            🌀
+          </span>
+          <span className="font-extrabold text-base tracking-tight text-orange-500">
             Subreddit Blender
           </span>
         </div>
-        <span className="bg-orange-500/10 text-orange-400 border border-orange-500/30 text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-          Daily #{dailyNumber}
-        </span>
-      </div>
 
-      {/* Hero Section */}
-      <div className="my-auto py-6 text-center flex flex-col items-center">
-        {/* Animated Badge Icon */}
-        <div className="relative mb-4">
-          <div className="w-20 h-20 bg-gradient-to-tr from-orange-600 via-amber-500 to-orange-400 rounded-3xl flex items-center justify-center text-4xl shadow-2xl shadow-orange-600/40 border border-orange-400/30 transform hover:scale-105 transition-transform">
-            🌀
-          </div>
-          <span className="absolute -bottom-2 -right-2 bg-slate-900 text-slate-200 border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-md shadow-md">
-            beta
+        <div className="flex items-center gap-3 text-xs font-mono tabular-nums text-slate-300 whitespace-nowrap shrink-0">
+          <span className="text-orange-400 font-bold">Daily #{dailyNumber}</span>
+          <span aria-hidden="true" className="text-slate-600">
+            ·
           </span>
+          <span className="text-slate-400">beta</span>
+        </div>
+      </header>
+
+      {/* Hero Center */}
+      <main className="my-auto py-8 text-center flex flex-col items-center">
+        <div className="relative mb-6">
+          <div className="w-20 h-20 bg-gradient-to-tr from-orange-600 via-amber-500 to-orange-400 rounded-3xl flex items-center justify-center text-4xl shadow-2xl shadow-orange-600/30 border border-orange-400/30 transition-transform duration-200 hover:scale-105">
+            <span className="select-none" aria-hidden="true">
+              🌀
+            </span>
+          </div>
         </div>
 
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-100 mb-2 leading-tight">
-          Two Subreddits. <br />
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-100 mb-3 leading-tight tracking-tight [text-wrap:balance]">
+          Two Subreddits.{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
             One Fused Post.
           </span>
         </h1>
 
-        <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto mb-6 leading-relaxed">
-          Can you spot the tropes, flairs, and linguistic clues to untangle the blend?
+        <p className="text-sm sm:text-base text-slate-300 max-w-md mx-auto mb-7 leading-relaxed">
+          Spot the community tropes, blended flairs, and linguistic clues to untangle both origin subreddits.
         </p>
 
-        {/* Primary Action Button */}
+        {/* Primary CTA */}
         <button
+          type="button"
           onClick={handleStartGame}
           disabled={isLoading}
-          className="w-full sm:w-4/5 py-4 px-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-orange-600/30 border border-orange-400/40 transition-all cursor-pointer active:scale-95 mb-3 flex items-center justify-center gap-2 disabled:opacity-70"
+          className="w-full sm:w-80 py-3.5 px-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-bold text-base rounded-xl shadow-lg shadow-orange-600/25 border border-orange-400/30 transition-all duration-150 cursor-pointer active:scale-[0.98] mb-4 flex items-center justify-center gap-2 disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 whitespace-nowrap"
         >
           {isLoading ? (
             <span>Loading Game...</span>
           ) : (
             <>
-              <span>Play Now</span>
-              <span className="text-lg">➔</span>
+              <span>{isDailyCompleted ? 'Open Mode Hub' : `Play Daily #${dailyNumber}`}</span>
+              <ArrowRight className="w-4 h-4" />
             </>
           )}
         </button>
 
+        {/* Quick Telemetry Readout */}
+        <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400 font-mono tabular-nums mb-5">
+          <span className="inline-flex items-center gap-1.5 text-amber-300">
+            <Flame className="w-3.5 h-3.5 text-orange-400" />
+            {streakCurrent}-day streak
+          </span>
+          <span aria-hidden="true" className="text-slate-600">
+            ·
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-slate-300">
+            <Trophy className="w-3.5 h-3.5 text-amber-400" />
+            {karma} Karma
+          </span>
+          <span aria-hidden="true" className="text-slate-600">
+            ·
+          </span>
+          <span className={isDailyCompleted ? 'text-emerald-400' : 'text-slate-300'}>
+            {isDailyCompleted ? 'Daily cleared' : 'Daily ready'}
+          </span>
+        </div>
+
         {/* How to Play Toggle */}
         <button
-          onClick={() => setShowHowToPlay(!showHowToPlay)}
-          className="text-xs text-slate-400 hover:text-white font-semibold py-1.5 px-3 rounded-lg hover:bg-slate-800/60 transition-colors cursor-pointer flex items-center gap-1.5"
+          type="button"
+          onClick={() => setShowHowToPlay((prev) => !prev)}
+          className="text-xs text-slate-300 hover:text-white font-semibold py-2 px-4 rounded-lg hover:bg-slate-800/70 transition-colors cursor-pointer inline-flex items-center gap-1.5 whitespace-nowrap"
         >
+          <BookOpen className="w-3.5 h-3.5 text-orange-400" />
           <span>{showHowToPlay ? 'Hide Guide' : 'How To Play?'}</span>
         </button>
-      </div>
+      </main>
 
-      {/* How to Play Card / Guide */}
+      {/* Expandable Guide or Rewards Summary */}
       {showHowToPlay ? (
-        <div className="bg-[#1a2836] border border-slate-700/80 rounded-2xl p-4 mb-4 text-left shadow-2xl animate-fade-in">
-          <h3 className="text-xs font-black text-orange-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-            <span>📖</span> How Subreddit Blender Works?
-          </h3>
+        <section
+          aria-label="Game Rules"
+          className="bg-[#1a2836] border border-slate-700/80 rounded-2xl p-5 mb-5 text-left animate-fade-in"
+        >
+          <h2 className="text-sm font-bold text-orange-400 mb-4">
+            How Subreddit Blender Works
+          </h2>
 
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-lg bg-orange-600/20 text-orange-400 border border-orange-500/30 flex items-center justify-center font-bold text-xs flex-shrink-0">
+              <div className="w-6 h-6 rounded-lg bg-orange-500/15 text-orange-400 border border-orange-500/30 flex items-center justify-center font-mono font-bold text-xs shrink-0">
                 1
               </div>
               <div>
-                <h4 className="text-xs font-bold text-slate-200">Read the Fused Post</h4>
-                <p className="text-[11px] text-slate-400 leading-snug">
-                  Each card blends content, style, and flairs from 2 different communities into one post.
+                <h3 className="text-xs font-bold text-slate-100">Read the Fused Post</h3>
+                <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                  Each card blends tropes, formatting, and flair from 2 distinct Reddit communities.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-lg bg-amber-600/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold text-xs flex-shrink-0">
+              <div className="w-6 h-6 rounded-lg bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center font-mono font-bold text-xs shrink-0">
                 2
               </div>
               <div>
-                <h4 className="text-xs font-bold text-slate-200">Guess Both Subreddits</h4>
-                <p className="text-[11px] text-slate-400 leading-snug">
-                  Type community names into the search box. Autocomplete will fetch official icons to help!
+                <h3 className="text-xs font-bold text-slate-100">Untangle Both Subreddits</h3>
+                <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                  Search communities with autocomplete and lock in your 2-subreddit pair within 4 tries.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-lg bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-xs flex-shrink-0">
+              <div className="w-6 h-6 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-mono font-bold text-xs shrink-0">
                 3
               </div>
               <div>
-                <h4 className="text-xs font-bold text-slate-200">Earn Karma & Streaks</h4>
-                <p className="text-[11px] text-slate-400 leading-snug">
-                  Earn bonus Karma for completing daily mashups or conquering custom difficulty levels!
+                <h3 className="text-xs font-bold text-slate-100">
+                  Earn Karma, Unlock Cosmetics & Flex in Comments
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                  Spend Karma or streak milestones on Old Reddit & Synthwave themes, then copy spoiler-tagged scorecards.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       ) : (
-        /* Rewards & Modes Teaser Card */
-        <div className="bg-[#1a2836]/60 border border-slate-800 rounded-2xl p-3.5 mb-4 text-xs text-slate-300 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="text-xl">🏆</span>
-            <div className="text-left">
-              <div className="font-bold text-slate-200">Daily & Difficulty Rewards</div>
-              <div className="text-[10px] text-slate-400">Play the Daily Challenge or master Difficulty Levels</div>
+        <section className="bg-[#1a2836]/75 border border-slate-800 rounded-2xl p-4 mb-5 flex items-center justify-between gap-4">
+          <div className="text-left">
+            <div className="font-bold text-sm text-slate-100">
+              Daily Challenge, Difficulty Tiers & Community Blends
+            </div>
+            <div className="text-xs text-slate-400 mt-0.5">
+              Solve mashups to unlock themes, flairs, and spoiler-safe comment cards
             </div>
           </div>
-          <span className="bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 text-[10px] font-bold px-2 py-1 rounded-md">
-            +Karma
+          <span className="text-xs font-mono tabular-nums font-bold text-emerald-400 whitespace-nowrap shrink-0">
+            +100–300 Karma
           </span>
-        </div>
+        </section>
       )}
 
       {/* Footer */}
-      <div className="text-[11px] text-slate-500 text-center pb-1 font-medium">
+      <footer className="text-xs text-slate-500 text-center py-2">
         Built for Reddit’s Game of the Day Hackathon by u/CrazySilvis
-      </div>
+      </footer>
     </div>
   );
 };
-
-const container = document.getElementById('root');
-if (container && !container.hasChildNodes()) {
-  const root = createRoot(container);
-  root.render(
-    <React.StrictMode>
-      <Splash />
-    </React.StrictMode>
-  );
-}

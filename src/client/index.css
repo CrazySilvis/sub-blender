@@ -1,11 +1,21 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-html, body, #root {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #0f172a; /* Slate 900 background */
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b141f;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
 }
 
 @keyframes spin-slow {
@@ -17,6 +27,88 @@ html, body, #root {
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kinetic-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes upvote-burst {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.85);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes blender-swirl {
+  0% {
+    transform: scale(0.95) rotate(-12deg);
+  }
+  60% {
+    transform: scale(1.04) rotate(6deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 .animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
+  animation: spin-slow 9s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-kinetic-shake {
+  animation: kinetic-shake 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-upvote-burst {
+  animation: upvote-burst 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-blender-swirl {
+  animation: blender-swirl 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-fade-in,
+  .animate-kinetic-shake,
+  .animate-upvote-burst,
+  .animate-blender-swirl {
+    animation: none !important;
+  }
 }

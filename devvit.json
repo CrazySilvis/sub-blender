@@ -50,10 +50,5 @@
   },
   "permissions": {
     "reddit": true
-  },
-  "http": {
-    "domains": [
-      "www.reddit.com"
-    ]
   }
 }
